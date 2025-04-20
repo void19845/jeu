@@ -1,19 +1,16 @@
 package Main;
-import javax.swing.JFrame;
+
+import javax.swing.*;
+
 public class Main {
     public static void main(String[] args) {
-        JFrame window = new JFrame();
+        JFrame window = new JFrame("Thai-nam & mathis");
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        window.setResizable(false);
-        window.setTitle("titre");
+        window.setExtendedState(JFrame.MAXIMIZED_BOTH); //  Plein écran
+        window.setUndecorated(false); // ou true a toi de voir thai nam
 
-        gamePanel gamePanel = new gamePanel();
-        window.add(gamePanel);
-        window.pack();
-
-        window.setLocationRelativeTo(null);
+        GameMenu menu = new GameMenu(window);
+        window.add(menu);
         window.setVisible(true);
-
-        gamePanel.startGameThread();
     }
 }
